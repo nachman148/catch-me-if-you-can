@@ -1,0 +1,138 @@
+@keyframes myAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Suez+One&display=swap&subset=hebrew');
+@import url('https://fonts.googleapis.com/css?family=Alef:400,700&display=swap&subset=hebrew');
+
+body {
+    background: #0ab2be;
+    overflow: hidden;
+}
+
+.container {
+    width: 1140px;
+    height: 550px;
+    margin: auto;
+
+}
+
+.title {
+    border: 1px #000;
+    width: 1140px;
+    height: 50px;
+    margin: auto;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Suez One', serif;
+    color: #bd0505;
+}
+
+
+
+
+
+.play {
+    float: right;
+    width: 90px;
+    height: 30px;
+    margin: 20px 15px;
+}
+
+.gameBoard {
+    width: 855px;
+    height: 550px;
+    background: #000000;
+    float: left;
+    position: relative;
+}
+
+.click {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 5%;
+    background: #d5a7de;
+}
+
+.details {
+    width: 20%;
+    border: solid rgb(216, 129, 15);
+    float: right;
+    background: #007b84;
+}
+
+.boxdetails {
+    height: 70px;
+    border: solid rgb(216, 129, 15);
+    margin: 2px;
+}
+
+p {
+    margin: 0px;
+    padding: 24px 10px;
+    font: 25px 'Alef', sans-serif;
+    float: right;
+}
+
+#score,
+#points,
+#level,
+#missClicks,
+#timer {
+    margin: 6px;
+    float: left;
+    font: 25px 'Alef', sans-serif;
+}
+
+h6 {
+    font-size: 16px;
+    margin: auto;
+    text-align: center;
+    border-bottom: 1px dashed rgb(224, 131, 9);
+}
+
+.w {
+    height: 125px;
+    border: solid rgb(216, 129, 15);
+    margin: 2px;
+    background: 00bcd44d;
+}
+
+/* #winners{
+    overflow: scroll;
+}
+.winner {
+    font-size: 32px;
+    background: #014952;
+    padding-bottom: 20px;
+    margin: 0px;
+} */
+
+.winnerScore {
+    float: left;
+    margin: 0px;
+}
+
+.winnerName {
+    float: right;
+    margin: 0px;
+}
+
+.winnerDete {
+    display: none;
+    border: 1px solid rgb(216, 129, 15);
+    background: #000;
+}
+
+/* .winnerDete:hover {
+    display: block;
+} */
