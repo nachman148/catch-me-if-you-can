@@ -22,10 +22,6 @@ var flag = false;
 var toAppend = "";
 var date = "";
 var info = "";
-// var newWinner = "";
-
-
-
 
 var winnersJSON = localStorage.getItem("theWinners");
 var winners = [];
@@ -40,19 +36,12 @@ function craeteHTML() {
     toAppend = "";
     winners.forEach(function (users, i) {
         var wwinner = `<div class="winner"> <div class="winnerScore">  ${users.score}</div> 
-        <div class="winnerName"> ${users.name} </div> </div>
-        <div class="winnerDete">${users.date} </div> </br>`;
+        <div class="winnerName"> ${users.name} </div>
+        <div class="winnerDete">${users.date} </div>  </div></br>`;
         toAppend += wwinner;
     });
     DOMElement.winners.innerHTML = toAppend;
 }
-// var winner = document.getElementsByClassName("winner");
-// var winnerDete = document.getElementsByClassName("winnerDete");
-// winner.addEventListener("mouseover", over);
-// function over() {
-//     winnerDete.style.display = "block";
-// }
-
 
 function newPlay() {
     if (flag) {
@@ -64,9 +53,7 @@ function newPlay() {
 }
 
 function start() {
-    if (flag) {
-
-    } else {
+    if (!flag) {
         flag = true
         timer();
         DOMElement.click.addEventListener("click", goodClikcs);
@@ -97,7 +84,6 @@ function gameOver() {
     DOMElement.click.style.animation = ("myAnimation 0s infinite linear");
     DOMElement.click.style.left = "0px";
     DOMElement.click.style.top = "0px";
-    // reset();
     inspect();
 }
 
@@ -123,12 +109,16 @@ function escape() {
 
 function goodClikcs(e) {
     e.stopPropagation();
-    clicks++;
-    if (clicks == 10) {
-        level();
-    }
     gameElement.score += 10 * gameElement.level;
     DOMElement.score.innerHTML = gameElement.score;
+    clicks++;
+    if (clicks == 10) {
+        if (gameElement.level == 5) {
+            gameOver()
+        } else {
+            level();
+        }
+    }
 }
 
 function missClicks() {
@@ -168,7 +158,7 @@ function inspect() {
 
 function newDate() {
     theDate = new Date;
-    date = theDate.getDate() + "/" + theDate.getMonth() + "/" + theDate.getFullYear();
+    date = theDate.getDate() + "/" + (theDate.getMonth()+1)  + "/" + (theDate.getFullYear()-2000);
 }
 
 function winner(_name, _score, _date) {
