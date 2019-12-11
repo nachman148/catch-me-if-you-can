@@ -208,12 +208,3 @@ function insertion() {
 //     }
 // ];
 
-// var winnersJSON = localStorage.getItem("theWinners");
-// var winners = [];
-// if (winnersJSON != null) {
-//    winners = JSON.parse(winnersJSON)
-// } להוציא מהאיחסון
-
-// winnersJSON = JSON.stringify(winners);
-// localStorage.setItem("theWinners", winnersJSON);
-// להוסיף לאחסון
